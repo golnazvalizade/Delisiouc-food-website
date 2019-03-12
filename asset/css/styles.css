@@ -1,0 +1,576 @@
+@import url("./all.css");
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i');
+
+
+@font-face {
+    src: url("../fonts/cheddar\ jack.ttf");
+    font-family: "cheddar jack";
+}
+
+html,
+body,
+* {
+    font-size: 100%;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+*,
+*::before,
+*::after,
+html,
+body {
+    box-sizing: border-box;
+}
+
+
+body {
+    overscroll-behavior-y: none;
+    -webkit-text-size-adjust: none;
+    -ms-overflow-scrolling: scrollbar;
+}
+
+header,
+section,
+footer,
+nav,
+menu,
+article,
+aside {
+    display: block;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Raleway',
+        'Source Sans Pro',
+        sans-serif;
+    scroll-behavior: smooth;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+:root {
+    --main-font-family: "cheddar jack";
+    --main-font-color: #f2b632;
+    --main-white: #fff;
+    --main-font-dark-gray: #4d4d4d;
+    --main-footer-bg-color: #141414;
+}
+
+section {
+    padding: 6rem 0;
+}
+
+p {
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-right: -1px;
+    line-height: 1.5;
+    color: var(--main-font-dark-gray);
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-white);
+}
+
+header {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .8), transparent),
+        url("../../image/main.jpg") bottom no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu {
+    display: none;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 3rem;
+    right: 4rem;
+    padding: 2rem 2.5rem;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.menu .bar,
+.menu .bar::after,
+.menu .bar::before {
+    content: "";
+    background-color: var(--main-white);
+    width: 4rem;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    transition: all .35s cubic-bezier(0.26, 0.1, 0.27, 1.55);
+}
+
+.menu .bar::after {
+    top: 2rem;
+}
+
+.menu .bar::before {
+    top: -2rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 10rem 0;
+    position: relative;
+    width: 100%;
+    height: 6rem;
+    line-height: 6rem;
+}
+
+#logo {
+    display: block;
+    border-bottom: solid 2px #fff;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-right: -1px;
+    font-weight: 600;
+    margin-bottom: -17px;
+    transition: all .2s ease-in-out;
+}
+
+#logo:hover {
+    color: var(--main-font-color);
+    border-bottom-color: var(--main-font-color);
+}
+
+.nav .overlay ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin-top: 2px;
+    position: relative;
+    height: 100%;
+}
+
+.nav .overlay ul li {
+    text-transform: uppercase;
+}
+
+.nav .overlay ul li a {
+    display: block;
+    font-size: 1.5rem;
+    padding: 0 2rem;
+    letter-spacing: 1px;
+    margin-right: -1px;
+    position: relative;
+    transition: all 650ms;
+}
+
+.nav .overlay ul li a:hover {
+    color: var(--main-font-color);
+}
+
+.nav .overlay ul li a.active {
+    color: var(--main-font-color);
+}
+
+
+.nav .overlay ul li a.active::before {
+    content: "";
+    background-color: var(--main-font-color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -15px;
+    width: 3rem;
+    height: 2px;
+    margin-bottom: 6px;
+}
+
+
+.main-text {
+    line-height: 0;
+    user-select: none;
+    text-align: center;
+    margin: auto;
+}
+
+.main-text h1 {
+    font-family: var(--main-font-family);
+    font-size: 9rem;
+    color: var(--main-font-color);
+    margin-bottom: 6rem;
+    font-weight: 100;
+}
+
+.main-text h2 {
+    font-size: 3rem;
+    font-weight: 100;
+    color: var(--main-white);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-right: -3px;
+    line-height: 1;
+    position: relative;
+}
+
+.main-text h2::after,
+.main-text h2::before {
+    content: "";
+    background-color: var(--main-white);
+    width: 5rem;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+}
+
+.main-text h2::after {
+    right: -9rem;
+}
+
+.main-text h2::before {
+    left: -4rem;
+}
+
+.btn {
+    display: inline-block;
+    text-transform: uppercase;
+    border-radius: 3px;
+    transition: all .35s ease-in-out;
+}
+
+.main-btn {
+    border: solid 1px var(--main-font-color);
+    padding: 2rem 2rem;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    margin-right: -3px;
+    position: relative;
+    margin-top: 3rem;
+}
+
+.main-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.main-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.btn-info {
+    color: var(--main-font-color);
+    border-bottom: solid 2px var(--main-font-color);
+    padding: 1rem;
+    margin: 2rem 0 4rem 0;
+    letter-spacing: 3px;
+    margin-right: -3px;
+    font-size: 1.5rem;
+}
+
+.btn-info:hover {
+    background-color: var(--main-font-color);
+    color: var(--main-white);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.store {
+    background: url("../../image/ourstory.jpg") center no-repeat;
+    background-size: cover;
+    min-height: 40rem;
+    width: 100%;
+    flex: 1;
+}
+
+.paragragh {
+    flex: 1;
+    padding-right: 10rem;
+}
+
+.custom-font {
+    font-family: var(--main-font-family);
+    color: var(--main-font-color);
+    font-size: 6.5rem;
+    font-weight: 100;
+    text-align: center;
+    line-height: 1;
+}
+
+.custom-font-second {
+    font-size: 2.5rem;
+    color: var(--main-font-dark-gray);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-right: -5px;
+    line-height: .2;
+    margin-bottom: 5rem;
+}
+
+.between-sec-color {
+    color: var(--main-white);
+}
+
+.between-sec {
+    padding: 20rem 0;
+    text-align: center;
+}
+
+.fresh-ingredients {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
+        url("../../image/fresh.jpg") center no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+.pic-group {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    flex: 1;
+    order: 1
+}
+
+.pic-group img {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+}
+
+.paragragh.our-menu {
+    order: 2;
+    padding-right: 0;
+    padding-left: 10rem;
+}
+
+.citrus-goodness {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
+        url("../../image/citrus.jpg") center no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+header,
+.between-sec {
+    background-attachment: fixed;
+}
+
+.contact-us form {
+    flex: 1;
+    width: 100%;
+    min-width: 9rem;
+    margin-top: .5rem;
+}
+
+.input,
+.text-area {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px 1rem;
+    margin: 5px 0;
+    border: solid 1px var(--main-font-color);
+    color: #878787;
+    font-size: 1.3rem;
+    border-radius: 3px;
+}
+
+.text-area {
+    height: 10rem;
+}
+
+.btn-submit {
+    background-color: var(--main-font-color);
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+footer {
+    background-color: var(--main-footer-bg-color);
+    padding: 5rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    margin-right: -3px;
+}
+
+footer h4 {
+    font-size: 3rem;
+    font-weight: 100;
+    color: var(--main-font-color);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.main-text h1 {
+    transform: translateY(4rem);
+    opacity: 0;
+    animation: 1s fadeUp .8s forwards;
+}
+
+.main-text h2 {
+    transform: scale(2);
+    opacity: 0;
+    animation: .5s fadeIn .5s forwards;
+}
+
+.main-text .main-btn {
+    opacity: 0;
+    animation: 1s fade 1s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: scale(2);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    0% {
+        transform: translateY(4rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:769px) {
+
+    .menu {
+        display: block;
+    }
+
+    .active .bar {
+        background-color: transparent;
+    }
+
+    .active .bar::after {
+        transform: rotate(-45deg);
+    }
+
+    .active .bar::before {
+        transform: rotate(45deg);
+    }
+
+    .active .bar::after,
+    .active .bar::before {
+        top: 0;
+    }
+
+    #logo {
+        display: none;
+    }
+
+    .overlay {
+        background-color: rgba(0, 0, 0, .95);
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        transition: opacity .5s cubic-bezier(0.26, 0.1, 0.27, 1.55);
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    .overlay.open-menu {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .nav .overlay ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        height: 100%;
+    }
+
+    .nav .overlay ul li a {
+        display: block;
+        font-size: 2rem;
+        transition: all 650ms;
+    }
+
+    .store {
+        min-height: 30rem;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .paragragh {
+        padding-right: 0;
+    }
+
+    .paragragh.our-menu {
+        order: 0;
+        padding-left: 0;
+    }
+
+    .contact-us form {
+        margin-top: 5rem;
+    }
+
+    .btn-info {
+        font-size: 1.2rem;
+    }
+}
